@@ -1,6 +1,6 @@
 FROM ubuntu:jammy
 RUN apt-get update -y
-RUN apt-get install wget unzip libssl-dev libdb++-dev libboost-all-dev build-essential pkg-config -y
+RUN apt-get install wget unzip libssl-dev libdb++-dev libboost-all-dev build-essential pkg-config bsdmainutils -y
 COPY . /usr/src/strayacoin
 WORKDIR /usr/src/strayacoin
 RUN ./autogen.sh
