@@ -3,8 +3,9 @@ RUN apt-get update -y
 RUN apt-get install wget unzip libssl-dev libdb++-dev libboost-all-dev build-essential pkg-config -y
 COPY . /usr/src/strayacoin
 WORKDIR /usr/src/strayacoin
-RUN chmod +x build-unix.sh
-RUN ./build-unix.sh
+RUN ./autogen.sh
+RUN ./configure --with-incompatible-bdb
+RUN make
 CMD ["strayacoind", "--printtoconsole"]
 #RUN mv /usr/src/strayacoin/src/2204-spiderbyted /usr/bin/spiderbyted
 #WORKDIR /opt/
