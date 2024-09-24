@@ -1,5 +1,5 @@
 #!/bin/bash
 ./autogen.sh
-./configure
+./configure --with-incompatible-bdb
 make
 make install
