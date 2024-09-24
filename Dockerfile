@@ -3,6 +3,7 @@ RUN apt-get update -y
 RUN apt-get install wget unzip libssl-dev libdb++-dev libboost-all-dev build-essential -y
 COPY . /usr/src/strayacoin
 WORKDIR /usr/src/strayacoin
+RUN chmod +x build-unix.sh
 RUN ./build-unix.sh
 CMD ["strayacoind", "--printtoconsole"]
 #RUN mv /usr/src/strayacoin/src/2204-spiderbyted /usr/bin/spiderbyted
